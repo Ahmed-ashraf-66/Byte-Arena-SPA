@@ -1,0 +1,25 @@
+1- الرئيسية (Home)
+Hero featuredBox: صورة/بانر كبير بيعرض لعبة مميزة (ممكن تختار عشوائي أو أشهر لعبة من الـ API) + زرار "Explore Games"
+Featured Games: سلايدر أو Grid صغير (6-8 ألعاب) بترتيب sort-by=popularity
+New Releases: قسم منفصل بترتيب sort-by=release-date
+Browse by Category: أيقونات أو كروت صغيرة لأهم 6-8 تصنيفات (Shooter, MMORPG, Racing...) كل واحدة بتودي على صفحة الـ Category بتاعتها
+Footer: لينكات سريعة + السوشيال ميديا (لو هتحطها) 
+
+2- كل الألعاب (All Games)/
+Grid كامل لكل الألعاب من /api/games من غير فلتر 
+Sidebar فلاتر: Category + Platform (checkboxes أو dropdown)
+Sort bar فوق: الأحدث / الأشهر / أبجدي (A-Z)
+Pagination أو Infinite Scroll لو العدد كبير (الـ API بيرجع كل الألعاب مرة واحدة، فممكن تعمل pagination يدوي في الفرونت إند نفسه، يعني تقسم الـ array اللي جالك)
+كل كارت لعبة: صورة thumbnail + اسم + تصنيف + زرار "التفاصيل"
+
+2. الأحدث والأشهر (Trending)
+صفحة بتبدّل بين تابين: “New Releases” و"Top Popular". الدالتين releaseDate() وpopularity() موجودين في fetchData.js، وreleaseDate() مستورد في home.js ومش مستخدم. وبدل جريد، نعرضها كقائمة مرتّبة (1، 2، 3...) بصورة صغيرة وتفاصيل، فشكلها يختلف عن All Games. ممكن كمان قسم “New Releases” في الهوم، وده كان في خطة SPA.txt ومتعملش.
+
+3. اختار لي لعبة (Surprise Me)
+زرار كبير بيختار لعبة عشوائية (ممكن بعد ما تحدد تصنيف أو منصة)، وتظهر في نافذة التفاصيل. صفحة صغيرة، وفكرتها مختلفة تمامًا عن التصفح.
+
+5- عن الموقع (About)
+ده مش متصل بالـ API، صفحة ستاتيك بسيطة فيها:
+وصف قصير عن ByteArena إيه هدفه
+إزاي بتيجي الداتا (مصدرها FreeToGame API مع credit ليهم)
+ممكن تحط معلومات تواصل (إيميل وهمي أو حقيقي)

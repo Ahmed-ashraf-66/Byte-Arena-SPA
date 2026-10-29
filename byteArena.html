@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src//dist/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="src/img/bytearena-logo.svg">
+    <title>ByteArena</title>
+</head>
+
+<body class=" bg-[url('../img/thumb.png')] bg-no-repeat bg-center bg-cover bg-fixed">
+    <div class="fixed inset-0 bg-black/60 -z-10"></div>
+
+    <div class="nav relative flex items-center justify-between text-white px-4 sm:px-6 xl:px-10 py-4 xl:py-8">
+
+        <a href="#/" class="logo block w-36 sm:w-44 xl:w-50 xl:ml-10 shrink-0">
+            <img src="src/img/bytearena-logo.svg" alt="bytearena">
+        </a>
+
+        <!-- زرار القايمة: بيظهر تحت 1280px بس -->
+        <button id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu" class="xl:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-white/10 border border-white/20 text-2xl cursor-pointer">
+            <i class="ti ti-menu-2"></i>
+        </button>
+
+        <!-- قايمة منسدلة على الشاشات الصغيرة، وصف عادي على الديسكتوب -->
+        <div id="menu" class="hidden xl:flex flex-col xl:flex-row xl:flex-1 xl:items-center xl:justify-between
+                absolute xl:static top-full inset-x-0 z-50 gap-4 xl:gap-0
+                px-4 sm:px-6 xl:px-0 py-4 xl:py-0
+                bg-black/90 xl:bg-transparent backdrop-blur-md xl:backdrop-blur-none
+                border-t border-white/10 xl:border-0">
+
+            <ul class="flex flex-col xl:flex-row xl:items-center xl:ml-16">
+                <li><a class="nav-link nav-active" href="#/">Home</a></li>
+                <li><a class="nav-link" href="#/games">All Games</a></li>
+                <li><a class="nav-link" href="#/trending">Trending</a></li>
+                <li><a class="nav-link" href="#/surpriseMe">Surprise Me</a></li>
+                <li><a class="nav-link" href="#/about">About</a></li>
+            </ul>
+
+            <div class="search relative xl:mr-25">
+                <i class="ti ti-search absolute top-1/2 left-3 -translate-y-1/2 text-white/70 pointer-events-none z-10"></i>
+                <input class="text-white bg-[#ffffff1a] w-full max-w-sm pl-10 pr-4 py-2 rounded-lg outline-none
+                backdrop-blur-md border-2 border-[#ffffff1a] placeholder-white/40 focus:border-primary transition-colors" type="search" name="search-games" id="search-games" placeholder="Search games...">
+            </div>
+        </div>
+    </div>
+    <div class="app transition-all duration-150 ease-in-out">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <a href="#/" class="footer-logo">
+                    <img src="src/img/bytearena-logo.svg" alt="ByteArena">
+                </a>
+                <p class="footer-text">Free games, all in one place. Discover, explore and play.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="#/">Home</a>
+                    <a href="#/games">All Games</a>
+                    <a href="#/trending">Trending</a>
+                    <a href="#/surpriseMe">Surprise Me</a>
+                    <a href="#/about">About</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Source</h3>
+                <p class="footer-text">
+                    Game data provided by
+                    <a class="footer-credit" href="https://www.freetogame.com" target="_blank" rel="noopener">FreeToGame</a>. ByteArena is an independent project and isn't affiliated with FreeToGame or any game publisher.
+                </p>
+            </div>
+        </div>
+
+        <p class="footer-bottom">© 2026 ByteArena. All game names and trademarks belong to their owners Created by Ahmed Ashraf.
+        </p>
+    </footer>
+    <script type="module" src="./route.js"></script>
+</body>
+
+</html>

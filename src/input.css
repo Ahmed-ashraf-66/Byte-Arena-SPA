@@ -1,0 +1,712 @@
+@import "tailwindcss";
+@source "../index.html";
+@source "../src/**/*.js";
+
+
+@theme {
+    --font-sans: 'Exo 2', sans-serif;
+    --font-orbitron: 'Orbitron', sans-serif;
+    --color-primary: #7B2FFF
+
+}
+
+   /* 1) Header and Search Box and Footer */
+ul a {
+    @apply mx-4 p-2 border-b-2 border-transparent hover:border-primary transition-all duration-300 ease-in-out
+}
+.nav-active {
+    @apply p-2 border-b-2 border-primary
+}
+.suggestions-search-box {
+    @apply absolute w-full py-3 mt-2 top-full z-50 bg-black/70 border border-black/50 rounded-lg overflow-y-hidden
+}
+.suggestion-game-card {
+    @apply rounded-lg hover:bg-white/20 flex gap-2 w-full px-3 py-1 cursor-pointer mt-1
+}
+.suggestion-game-image {
+    @apply w-20 h-12 rounded-xl
+}
+.suggestion-game-title {
+    @apply text-[12px] 
+}
+.suggestion-no-result {
+    @apply p-4 text-center text-white/70
+}
+/* 13) Footer */
+.footer {
+    @apply mt-16 border-t border-white/10 bg-black/40 backdrop-blur-md text-white
+}
+.footer-inner {
+    @apply max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8
+}
+.footer-logo {
+    @apply block w-36 mb-3
+}
+.footer-text {
+    @apply text-white/60 text-sm max-w-xs
+}
+.footer-title {
+    @apply font-orbitron text-sm uppercase tracking-widest text-white/60 mb-3
+}
+.footer-links {
+    @apply flex flex-col gap-2 text-sm
+}
+.footer-links a {
+    @apply text-white/70 hover:text-white transition-colors
+}
+.footer-credit {
+    @apply text-white underline decoration-primary underline-offset-4 hover:decoration-white
+}
+.footer-bottom {
+    @apply border-t border-white/10 py-4 px-6 text-center text-xs text-white/50
+}
+.up-btn {
+    @apply fixed bg-primary text-[14px] cursor-none text-white/80 font-orbitron px-2 py-1.5 rounded-lg opacity-0 z-50 bottom-5 right-5
+}
+.up-btn.show {
+@apply opacity-100 cursor-pointer
+}
+/* 2) Home: Hero */
+.hero-section{
+    @apply max-w-160 ml-23 my-14
+}
+.hero-title{
+    @apply text-7xl text-white font-orbitron mt-14
+}
+.hero-text{
+    @apply text-white/60 my-6
+}
+.hero-actions a{
+    @apply px-5 py-2 rounded-sm mx-3 cursor-pointer inline-block
+}
+.hero-btn-primary{
+    @apply bg-primary border border-primary hover:bg-primary/60 text-white
+} 
+.hero-btn-outline{
+    @apply border border-white bg-black/20 hover:bg-black/60 text-white
+}
+
+
+/* 3) Title For Featured and Browse by Category) */
+.section-heading {
+    @apply mt-20 ml-36 inline-block cursor-pointer
+}
+.section-heading-row {
+    @apply flex gap-2 items-center text-white 
+}
+
+
+/* 4) Home: Featured Games */
+@keyframes progress {
+    from { width: 0%; }
+    to   { width: 100%; }
+}
+.featured-progress{
+    animation: progress 5s linear forwards;
+}
+.featured-box {
+    @apply max-w-7xl mx-auto px-6 py-6 flex gap-4
+}
+.featured-cover {
+    @apply relative flex-1 h-auto rounded-xl overflow-hidden 
+}
+.featured-cover img {
+    @apply w-full h-135 object-cover translate-x-full transition-transform duration-300 ease-out
+}
+.featured-cover img.show {
+    @apply translate-x-0
+}
+.featured-info {
+    @apply absolute inset-0 flex justify-end items-start flex-col p-8 text-white bg-linear-to-t from-black/80 to-transparent 
+    translate-x-full transition-transform duration-300 ease-out delay-100
+}
+.featured-info.show {
+    @apply translate-x-0
+}
+.featured-name {
+    @apply text-5xl font-bold mb-3 
+}
+.featured-desc {
+    @apply mb-10
+}
+.featured-actions a{
+    @apply px-5 py-2 rounded-lg mx-3 cursor-pointer inline-block mb-7
+}
+.featured-btn-play {
+    @apply bg-white text-black hover:bg-white/90
+}
+.btn-save {
+    @apply bg-white/30 hover:bg-white/10 
+}
+.featured-list {
+    @apply w-72 flex flex-col
+}
+.featured-item {
+    @apply relative flex-1 flex items-center gap-4 px-4 rounded-xl overflow-hidden cursor-pointer hover:bg-white/5 transition-colors
+}
+.featured-item.active {
+    @apply bg-white/10
+}
+.featured-thumb {
+    @apply relative z-10 h-14 w-16 object-cover rounded-lg shrink-0 object-center
+}
+.featured-item-title {
+    @apply relative z-10 text-white text-sm font-medium line-clamp-2
+}
+.featured-bar {
+    @apply absolute inset-y-0 left-0 w-0 bg-white/10
+}
+
+
+/* 5) Home: Browse by Category */
+.home-cat-grid {
+    @apply max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6
+}
+.home-cat-card {
+    @apply relative overflow-hidden bg-black/40 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
+}
+.home-cat-img {
+    @apply block w-full aspect-video object-cover
+}
+.home-cat-hover {
+    @apply absolute inset-0 bg-linear-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300
+}
+.home-cat-info {
+    @apply text-white p-5
+}
+.home-cat-title {
+    @apply text-xl font-bold
+}
+.home-cat-publisher {
+    @apply text-gray-300 text-sm mt-1
+}
+.home-cat-tag {
+    @apply mt-4 ml-2 text-sm text-black absolute top-0
+}
+.home-cat-tag span {
+    @apply inline-block bg-gray-100/70 px-3 py-1 rounded-full font-bold border-2 border-gray-100
+}
+
+
+/* 6) All Games: Sort */
+.games-sort {
+    @apply text-white flex gap-2 justify-end items-center max-w-7xl mt-7 mx-auto
+}
+.games-select {
+@apply py-2 px-2 border border-gray-50 rounded-xl bg-[#ffffff1a] backdrop-blur-md
+}
+.games-select option {
+@apply bg-black/70 hover:bg-gray-300 text-gray-300
+}
+
+
+/* 7) All Games: Filter (Category + Platform) */
+.games-filters h4 {
+    @apply font-orbitron uppercase tracking-widest text-white/60 mb-3
+}
+.games-filters {
+    @apply bg-white/5 border border-white/10 p-5 rounded-xl sticky top-24 self-start flex flex-col max-h-[calc(100vh-7rem)]
+}
+.games-filter-scroll {
+    @apply max-w-96 overflow-y-auto pr-2 mb-7;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.25) transparent;
+};
+.games-filters li {
+    @apply my-0.5
+}
+.games-filters label {
+    @apply flex items-center gap-3 px-2 py-1.5 rounded-lg cursor-pointer text-[16px] text-white/80 transition-colors hover:bg-white/5
+}
+.games-filters input {
+    @apply w-4 h-4 accent-primary cursor-pointer
+}
+
+
+/* 8) All Games: Cards grid*/
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+.games-grid {
+    @apply grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6
+}
+.games-body .games-grid {
+    @apply flex-1 min-w-0
+}
+.games-card {
+    @apply relative cursor-pointer h-43 overflow-hidden bg-black/40 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-95;
+}
+.games-card-enter {
+    animation: card-in 400ms ease-out backwards
+}
+.games-card-img {
+    @apply object-center object-cover w-full h-full opacity-0 transition-opacity duration-500
+}
+.games-card-img.loaded {
+    @apply opacity-100
+}
+.games-card-hover {
+    @apply absolute inset-0 bg-linear-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-300
+}
+.games-card-tag {
+    @apply mt-4 ml-2 text-sm text-black absolute top-0
+}
+.games-card-tag span {
+    @apply inline-block bg-gray-100/70 px-3 py-1 rounded-full font-bold border-2 border-gray-100
+}
+.games-card-save {
+    @apply absolute mt-4 top-0 right-0 mr-2 cursor-pointer z-20
+}
+.games-card-save a {
+    @apply inline-block bg-black/70 px-3 py-1 rounded-lg font-bold text-white shadow-sm shadow-white
+}
+.games-card-title {
+    @apply absolute bottom-0 inset-x-0 z-10 px-4 pb-3 pt-8 text-white text-lg font-bold line-clamp-1 bg-linear-to-t from-black/80 to-transparent
+}
+.games-card-info {
+    @apply absolute inset-0 flex flex-col justify-end items-start px-4 pt-4 pb-14 text-white bg-linear-to-t 
+    from-black/80 to-transparent translate-y-full opacity-0 transition-all duration-300 ease-out
+}
+.games-card-publisher {
+    @apply text-gray-300 text-sm mt-1
+}
+.games-card-desc {
+    @apply mt-2 text-xs text-white/70 line-clamp-2
+}
+.games-card:hover .games-card-hover {
+    @apply opacity-100
+}
+.games-card:hover .games-card-info {
+    @apply translate-y-0 opacity-100 delay-100;
+}
+
+/* 9) All Games: Pagination */
+.games-pager {
+    @apply max-w-125 w-fit mx-auto mt-12 mb-12 flex justify-center gap-2 p-2 overflow-hidden bg-white/10 border-2 border-white/20 rounded-sm
+}
+.games-pager-btn {
+    @apply bg-black/50 text-white py-1.5 px-3 rounded-lg cursor-pointer hover:bg-primary
+}
+.games-pager-btn.active {
+    @apply bg-primary text-white
+}
+
+/* 10) Trending Page: Release Date */
+.release-date {
+    @apply max-w-7xl m-auto 
+}
+.section-release-heading {
+    @apply inline-block mb-3
+}
+.release-date-box {
+    @apply flex flex-col gap-4
+}
+.release-date-games {
+    @apply grid grid-cols-2 gap-1
+}
+.release-date-card {
+    @apply flex gap-4 hover:bg-white/20 rounded-xl p-2
+}
+.release-date-card img {
+    @apply w-40 h-20 rounded-sm
+}
+.release-text-box h3 {
+    @apply text-white font-bold 
+}
+.release-text-box h4 {
+    @apply text-white/80 text-[14px] 
+}
+.release-date-sliders {
+    @apply relative w-full h-150 aspect-video overflow-hidden rounded-2xl
+}
+.release-date-sliders img {
+    @apply absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-300
+}
+.release-date-sliders img.active {
+    @apply opacity-100
+}
+.release-date-dots {
+        @apply absolute z-10 bottom-3 inset-x-0 flex justify-center gap-2 
+}
+.release-date-dots span {
+    @apply w-3 h-3 bg-white/30 rounded-full 
+}
+.release-date-dots span.active {
+    @apply bg-primary
+}
+/* 11) Surprise Me Page */
+.surprise-section {
+    @apply max-w-2xl mx-auto px-6 my-12 flex flex-col items-center gap-6
+}
+.surprise-title {
+    @apply text-4xl font-orbitron text-white text-center
+}
+.surprise-viewport {
+    @apply relative w-full h-32 overflow-hidden rounded-xl bg-black/40
+}
+.surprise-frame {
+    @apply absolute inset-0 z-10 rounded-xl border-2 border-primary pointer-events-none
+}
+.surprise-item {
+    @apply flex items-center gap-4 h-32 px-4
+}
+.surprise-item-img {
+    @apply w-32 h-20 rounded-lg object-cover shrink-0
+}
+.surprise-item-info {
+    @apply flex flex-col min-w-0
+}
+.surprise-item-title {
+    @apply text-white font-bold text-lg line-clamp-1
+}
+.surprise-item-genre {
+    @apply text-white/70 text-sm
+}
+.surprise-btn {
+    @apply px-6 py-3 rounded-lg bg-primary text-white font-bold cursor-pointer hover:bg-primary/60 transition-colors disabled:opacity-60 disabled:cursor-not-allowed
+}
+.surprise-result {
+    @apply hidden w-full flex-col gap-4 p-4 rounded-xl bg-white/10 border border-white/20
+}
+.surprise-result.show {
+    @apply flex
+}
+.surprise-result-info {
+    @apply flex items-center gap-4
+}
+.surprise-result-img {
+    @apply w-24 h-16 rounded-lg object-cover border border-primary
+}
+.surprise-result-title {
+    @apply text-white font-bold text-lg
+}
+.surprise-result-text {
+    @apply text-white/70 text-sm
+}
+.surprise-result-btn {
+    @apply block text-center py-2 rounded-lg bg-primary text-white font-bold hover:bg-primary/60 transition-colors
+}
+/* 14) Surprise Me Page: Saved Games */
+.saved-section {
+    @apply max-w-7xl mx-auto px-6 my-16
+}
+.saved-title {
+    @apply text-3xl font-orbitron text-white mb-6
+}
+.saved-count {
+    @apply text-white/60 text-xl
+}
+.saved-row {
+    @apply flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory
+}
+.saved-card {
+    @apply relative shrink-0 w-64 snap-start rounded-2xl overflow-hidden bg-black/40 shadow-lg transition-all duration-300 hover:-translate-y-1
+}
+.saved-card.removing {
+    @apply opacity-0 scale-90
+}
+.saved-card-img {
+    @apply block w-full aspect-video object-cover
+}
+.saved-card-tag {
+    @apply absolute top-3 left-3 px-3 py-1 rounded-full bg-gray-100/70 text-black text-sm font-bold border-2 border-gray-100
+}
+.saved-card-remove {
+    @apply absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/60 text-white cursor-pointer hover:bg-primary transition-colors
+}
+.saved-card-title {
+    @apply px-4 pt-3 text-white font-bold line-clamp-1
+}
+.saved-card-publisher {
+    @apply px-4 pb-4 text-white/60 text-sm line-clamp-1
+}
+.saved-empty {
+    @apply p-6 rounded-xl bg-white/5 border border-white/10 text-white/60 text-center
+}
+/* 12) About Page */
+.about-page {
+    @apply max-w-4xl mx-auto px-6 my-12 text-white
+}
+.about-hero {
+    @apply text-center mb-12
+}
+.about-eyebrow {
+    @apply block text-sm uppercase tracking-widest text-white/60 mb-2
+}
+.about-title {
+    @apply text-5xl font-orbitron mb-4
+}
+.about-tagline {
+    @apply text-xl text-primary font-bold mb-4
+}
+.about-text {
+    @apply text-white/70 leading-relaxed
+}
+.about-section {
+    @apply mb-10
+}
+.about-section-title {
+    @apply text-2xl font-orbitron mb-4
+}
+.about-list {
+    @apply flex flex-col gap-3 mt-3
+}
+.about-list li {
+    @apply bg-white/5 border border-white/10 rounded-xl p-4 text-white/70
+}
+.about-steps {
+    @apply list-decimal pl-6 flex flex-col gap-2 text-white/70
+}
+.about-lead {
+    @apply text-white font-bold
+}
+.about-question {
+    @apply text-white font-bold mt-4
+}
+.about-answer {
+    @apply text-white/70
+}
+.about-link {
+    @apply text-white underline decoration-primary underline-offset-4 hover:decoration-white
+}
+.about-note {
+    @apply text-center text-white/50 text-sm mt-12
+}
+/* 13) Games Details Page */ 
+.game-detalis-title {
+    @apply font-orbitron text-white text-5xl mb-10
+}
+.game-details-section {
+    @apply max-w-7xl m-auto mt-12
+}
+.game-details-box {
+    @apply flex gap-5 
+}
+.game-details-name {
+    @apply text-4xl font-sans text-white
+}
+.game-details-image {
+    @apply rounded-sm shadow-lg shadow-white/50
+}
+.game-details-desciption {
+    @apply text-white/80 text-xl mt-3
+}
+.details-buttons-box {
+    @apply flex gap-3 mt-12
+}
+.buttons-box-play {
+    @apply inline-block cursor-pointer bg-primary hover:bg-primary/50 text-white px-3 py-2 font-sans rounded-sm
+}
+.buttons-box-save {
+    @apply bg-white/20 rounded-sm border border-white/10 hover:bg-white/30 cursor-pointer 
+}
+.buttons-box-save-a {
+    @apply px-4 py-3 text-white text-2xl
+}
+.buttons-box-platform {
+    @apply bg-white/20 rounded-sm border border-white/10
+}
+.buttons-box-platform i {
+    @apply text-white/80 text-3xl px-3 py-2
+}
+.buttons-box-genre {
+    @apply text-white/80 px-3 py-2 bg-white/20 rounded-sm border border-white/10
+}
+.game-details-box-2 {
+    @apply flex gap-8 sticky top-24 mb-5 self-start
+}
+.game-details-info, .game-details-about {
+    @apply bg-white/5 border border-white/10 px-12 py-5 rounded-sm mt-6 shadow-black shadow-lg
+}
+.game-details-about h2, .game-details-info h3 {
+    @apply font-orbitron text-2xl text-white/80 my-5
+}
+.game-details-about h4 {
+    @apply text-sm text-white/90 
+}
+.game-details-screenshots {
+    @apply grid grid-cols-3
+}
+.game-details-screenshots img {
+    @apply h-35 w-65 rounded-xs mb-3 shadow-white/50 shadow-lg
+}
+.game-details-info div {
+    @apply text-white/50 text-[18px] mt-1
+}
+.game-details-info div span {
+    @apply text-white/90 text-[12px]
+}
+.game-requirements {
+    @apply flex flex-col
+}
+.details-similar-section {
+    @apply max-w-7xl m-auto my-8 bg-white/5 border border-white/10 p-6 rounded-sm shadow-black shadow-lg
+}
+.details-similar-section h2 {
+    @apply text-3xl font-orbitron text-white/80 mb-3
+}
+.similar-cards-box {
+    @apply flex gap-1.5 
+}
+.details-similar-card {
+    @apply relative overflow-hidden hover:-translate-y-1 transition-transform duration-300 
+}
+.details-similar-card img {
+    @apply aspect-video object-cover rounded-xs
+}
+.details-similar-card h4 {
+    @apply absolute bottom-0 ml-1.5 mb-1.5 text-white text-[16px] font-bold line-clamp-1 bg-linear-to-t from-black/80 to-transparent; 
+}
+.details-similar-card div {
+    @apply absolute top-0 mt-1 ml-1 text-white/90 text-xs bg-black/50 border border-black/80 rounded-sm
+}
+/* RESPONSIVE ADDITIONS */
+
+/* ---------- تحت 1280px: مسافة جانبية للأقسام اللي max-w-7xl من غير padding ---------- */
+@media (max-width: 1279px) {
+    .games-sort,
+    .games-body {
+        padding-inline: 1.5rem;
+    }
+}
+
+/* ---------- تابلت وأصغر (≤ 1023px) ---------- */
+@media (max-width: 1023px) {
+    /* الهيرو */
+    .hero-section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+    .hero-title {
+        font-size: 3.75rem;
+    }
+    .section-heading {
+        margin-top: 3rem;
+        margin-left: 1.5rem;
+    }
+
+    /* السلايدر: الكفر فوق والكروت الجانبية صف أفقي بيتسحب */
+    .featured-box {
+        flex-direction: column;
+    }
+    .featured-cover {
+        flex: none;
+        width: 100%;
+    }
+    .featured-cover img {
+        height: 20rem;
+    }
+    .featured-list {
+        width: 100%;
+        flex-direction: row;
+        gap: 0.5rem;
+        overflow-x: auto;
+    }
+    .featured-item {
+        flex: none;
+        width: 16rem;
+        padding-block: 0.75rem;
+    }
+
+    /* تفاصيل السلايدر */
+    .featured-info {
+        padding: 1.5rem;
+    }
+    .featured-name {
+        font-size: 2.25rem;
+    }
+    .featured-desc {
+        margin-bottom: 1.25rem;
+    }
+    .featured-actions a {
+        margin-left: 0;
+        margin-right: 0.75rem;
+        margin-bottom: 0;
+    }
+
+    /* صفحة All Games: الفلاتر فوق الكروت */
+    .games-body {
+        flex-direction: column;
+    }
+    .games-filters {
+        position: static;
+        align-self: stretch;
+        max-height: none;
+    }
+    .games-filter-scroll {
+        max-width: none;
+        max-height: 14rem;
+    }
+}
+
+/* ---------- تابلت صغير: عمودين في الجريد (640px → 1023px) ---------- */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .home-cat-grid,
+    .games-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- موبايل (≤ 639px) ---------- */
+@media (max-width: 639px) {
+    .hero-section {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+    .hero-text {
+        margin-block: 1rem;
+    }
+    .section-heading {
+        margin-top: 2rem;
+    }
+
+    .featured-cover img {
+        height: 16rem;
+    }
+    .featured-info {
+        padding: 1.25rem;
+    }
+    .featured-name {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    .featured-desc {
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .featured-actions a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* روابط الهيدر: مسافات أصغر عشان تتساع */
+    ul a,
+    .nav-active {
+        padding: 0.375rem;
+    }
+    ul a {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ---------- موبايل صغير جدًا (≤ 479px): الباجينيشن ---------- */
+@media (max-width: 479px) {
+    .games-pager {
+        gap: 0.25rem;
+        max-width: calc(100vw - 1rem);
+    }
+    .games-pager-btn {
+        padding: 0.375rem 0.625rem;
+    }
+}
