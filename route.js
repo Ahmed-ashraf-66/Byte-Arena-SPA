@@ -34,7 +34,7 @@ async function createRoute() {
 
     const loadingSpan = document.createElement('span')
     loadingSpan.textContent = 'Loading...'
-    loadingSpan.className = "text-white/70 text-sm mt-4 font-orbitron tracking-wider flex"
+    loadingSpan.className = "text-white/70 text-sm mt-4 font-orbitron tracking-wider flex justify-center items-center"
 
     app.classList.add('opacity-0')
     app.innerHTML = ''
